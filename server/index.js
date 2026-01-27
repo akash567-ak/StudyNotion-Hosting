@@ -48,7 +48,7 @@ app.use(
 
     app.get("/", (req, res) => {
         return res.json({
-            success:false,
+            success:true,
             message:"Your server is up and running...",
         });
     });
