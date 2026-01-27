@@ -1,4 +1,3 @@
-const { data } = require("react-router-dom");
 const Category = require("../models/Category");
 
 function getRandomInt(max) {
