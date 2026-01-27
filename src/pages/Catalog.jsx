@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { apiConnector } from '../Services/apiConnector'
 import { categories } from '../Services/apis'
 import { getCatalogPageData } from '../Services/operations/pageAndComponentData'
-import Course_Card from '../components/core/Catalog/Course_Card'
+import CourseCard from '../components/core/Catalog/CourseCard'
 import { useSelector } from 'react-redux'
 import Error from "./Error"
 
@@ -134,7 +134,7 @@ const Catalog = () => {
                     <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
                         {
                             catalogPageData?.data?.mostSellingCourses?.slice(0,4).map((course, index) => (
-                                <Course_Card course={course} key={index} Height={"h-[400px]"} />
+                                <CourseCard course={course} key={index} Height={"h-[400px]"} />
                             ))
                         }
                     </div>

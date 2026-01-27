@@ -30,7 +30,8 @@ const ViewCourse = () => {
       dispatch(setTotalNoOfLectures(lectures));
     };
     setCourseSpecificDetails();
-  }, [courseId, token, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

@@ -4,7 +4,6 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { markLectureAsComplete } from '../../../Services/operations/courseDetailsAPI';
 import { updatedCompletedLectures } from '../../../slices/viewCourseSlice';
 import { BigPlayButton, Player } from 'video-react';
-import {FaPlay} from "react-icons/fa"
 import IconBtn from '../../common/IconBtn';
 
 const VideoDetails = () => {
@@ -45,7 +44,7 @@ const VideoDetails = () => {
   };
 
   setVideoSpecificDetails();
-}, [courseSectionData, courseEntireData , sectionId, subSectionId, location.pathname]);
+}, [courseSectionData, courseEntireData , courseId, sectionId, subSectionId, location.pathname]);
 
 
   const isFirstVideo = () => {

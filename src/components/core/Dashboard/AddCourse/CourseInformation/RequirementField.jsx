@@ -10,10 +10,12 @@ const RequirementField = ({name, label, register, errors, setValue, getValues}) 
       required:true,
       validate: (value) => value.length > 0
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(() => {
     setValue(name, requirementsList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[requirementsList])
 
 
