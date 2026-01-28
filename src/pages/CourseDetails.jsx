@@ -37,7 +37,7 @@ const CourseDetails = () => {
       }
     };
     getCourseFullDetails();
-  }, [courseId, courseData]);
+  }, [courseId]);
 
   const [avgReviewCount, setAvgReviewCount] = useState(0);
 

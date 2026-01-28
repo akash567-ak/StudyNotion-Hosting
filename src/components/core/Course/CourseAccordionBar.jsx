@@ -2,17 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import CourseSubSectionAccordion from "./CourseSubSectionAccordion";
 
-const CourseAccordionBar = ({ course, isActive, handleClick }) => {
+const CourseAccordionBar = ({ course, isActive, handleActive }) => {
   const contentE1 = useRef(null);
 
   const [active, setActive] = useState(false);
   useEffect(() => {
-    setActive(isActive?.includes(course._id));
-  }, [isActive, course._id]);
+    // if (!course) return;
+    setActive(isActive?.includes(course?._id));
+  }, [isActive, course]);
   const [sectionHeight, setSectionHeight] = useState(0);
   useEffect(() => {
     setSectionHeight(active ? contentE1.current.scrollHeight : 0);
   }, [active]);
+
 
   return (
     <div className="overflow-hidden border border-solid border-richblack-600 bg-richblack-700 text-richblack-5 last:mb-0">
@@ -20,22 +22,24 @@ const CourseAccordionBar = ({ course, isActive, handleClick }) => {
         <div
           className={`flex cursor-pointer items-start justify-between bg-opacity-20 px-7 py-6 transition-[0.3s]`}
           onClick={() => {
-            handleClick(course._id);
+            if(course?._id){
+              handleActive(course._id);
+            }    
           }}
         >
           <div className="flex items-center gap-x-2">
             <i
               className={
-                isActive.includes(course._id) ? "rotate-180" : "rotate-0"
+                isActive?.includes(course._id) ? "rotate-180" : "rotate-0"
               }
             >
               <AiOutlineDown />
             </i>
-            <p>{course?.course.sectionName}</p>
+            <p>{course?.sectionName}</p>
           </div>
           <div className="space-x-4">
             <span className="text-yellow-25">
-              {`${course.subSection.length || 0} lecture(S)`}
+              {`${course?.subSection?.length || 0} lecture(s)`}
             </span>
           </div>
         </div>

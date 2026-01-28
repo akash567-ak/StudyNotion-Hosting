@@ -1,4 +1,3 @@
-import React from 'react'
 import { HiOutlineVideoCamera } from "react-icons/hi"
 
 
