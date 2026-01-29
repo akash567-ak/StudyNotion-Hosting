@@ -98,7 +98,7 @@ exports.createCourse = async (req, res) => {
     await User.findByIdAndUpdate(
       { _id: instructorDetails._id },
       {
-        $push: {
+        $addToSet: {
           courses: newCourse._id,
         },
       },
@@ -117,7 +117,7 @@ exports.createCourse = async (req, res) => {
     await Category.findByIdAndUpdate(
       { _id: category },
       {
-        $push: {
+        $addToSet: {
           courses: newCourse._id,
         },
       },

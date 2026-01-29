@@ -14,7 +14,7 @@ const CourseSlider = ({Courses}) => {
         Courses?.length ? (
           <Swiper
             slidesPerView={1}
-            loop={true} 
+            loop={false} 
             spaceBetween={200}
             autoplay={{
             delay: 2500,
